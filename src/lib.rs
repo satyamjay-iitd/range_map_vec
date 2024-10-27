@@ -334,6 +334,11 @@ where
             }
         }
     }
+
+    // Returns the number of elements in the map.
+    pub fn len(&self) -> usize{
+        self.data.len()
+    }
 }
 
 impl<K, V> Default for RangeMap<K, V>
