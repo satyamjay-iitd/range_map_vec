@@ -336,7 +336,7 @@ where
     }
 
     // Returns the number of elements in the map.
-    pub fn len(&self) -> usize{
+    pub fn len(&self) -> usize {
         self.data.len()
     }
 }
@@ -369,6 +369,8 @@ mod tests {
         assert_eq!(tree.insert(0..=5, 0), true);
         assert_eq!(tree.insert(10..=20, 1), true);
 
+        assert_eq!(tree.len(), 2);
+
         assert_eq!(tree.contains(&0), true);
         assert_eq!(tree.contains(&3), true);
         assert_eq!(tree.contains(&5), true);
@@ -383,6 +385,8 @@ mod tests {
 
         assert_eq!(tree.remove(&2), Some((0, 5, 0)));
         assert_eq!(tree.remove(&18), Some((10, 20, 1)));
+        assert_eq!(tree.len(), 0);
+
         assert_eq!(tree.remove(&0), None);
     }
 
