@@ -25,6 +25,7 @@ use core::fmt;
 /// This implementation is done by using a sorted vec and using binary search
 /// for insertion and removal.
 #[derive(Debug, Clone)]
+#[cfg_attr(feature = "bitcode", derive(bitcode::Encode, bitcode::Decode))]
 pub struct RangeMap<K, V> {
     // This vec _must_ be in sorted order.
     data: Vec<(K, K, V)>,
